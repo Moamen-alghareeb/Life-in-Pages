@@ -1,4 +1,12 @@
 import React, { useState } from 'react';
+import Image from '../Components/Image';
+import { NavLink } from 'react-router';
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+} from '@clerk/clerk-react';
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
@@ -11,14 +19,16 @@ export default function NavBar() {
   return (
     <div className="w-full h-16 md:h-20 flex items-center justify-between my-2">
       {/* LOGO */}
-      <a href="/" className="flex items-center gap-4 text-2xl font-bold">
-        <img
-          src="/logo.jpeg"
-          alt="life Logo"
-          className="w-20 h-20 rounded-4xl"
-        />
-        <span>Life in Pages</span>
-      </a>
+      <div className="flex items-center gap-4 text-2xl font-bold">
+        <NavLink to="/">
+          <Image
+            src="/logo.jpeg"
+            alt="life Logo"
+            className="w-15 h-15 md:{w-20 h-20} rounded-4xl"
+          />
+        </NavLink>
+        <span className="cursor-default">Life in Pages</span>
+      </div>
       {/* MOBILE MENU */}
       <div className="md:hidden">
         {/* MOBILE BUTTON */}
@@ -32,33 +42,41 @@ export default function NavBar() {
             open ? 'left-0' : 'left-full'
           }`}
         >
-          <a href="#" onClick={() => setOpen(false)}>
+          <NavLink to="#" onClick={() => setOpen(false)}>
             Home
-          </a>
-          <a href="#" onClick={CloseBurger}>
-            Trending
-          </a>
-          <a href="#" onClick={CloseBurger}>
+          </NavLink>
+          <NavLink to="/postlist" onClick={CloseBurger}>
+            Posts
+          </NavLink>
+          <NavLink to="#" onClick={CloseBurger}>
             Most Popular
-          </a>
-          <a href="#" onClick={CloseBurger}>
+          </NavLink>
+          <NavLink to="#" onClick={CloseBurger}>
             About
-          </a>
-          <a href="#" onClick={CloseBurger}>
-            <button className="btn btn-soft btn-info">Login 👋</button>
-          </a>
+          </NavLink>
+          <NavLink
+            to="#"
+            className="btn btn-soft btn-info"
+            onClick={CloseBurger}
+          >
+            Login 👋
+          </NavLink>
         </div>
       </div>
       {/* DESKTOP MENU */}
       <div className="hidden md:flex items-center gap-8 xl:gap-12 font-medium">
-        <a href="#">Home</a>
-        <a href="#">Trending</a>
-        <a href="#">Most Popular</a>
-        <a href="#">Posts</a>
-        <a href="#">About</a>
-        <a href="#" className="btn btn-soft btn-info">
-          Login 👋
-        </a>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="postlist">Posts</NavLink>
+        <NavLink to="/about">About</NavLink>
+
+        <SignedOut>
+          <NavLink to="/login" className="btn btn-soft btn-info">
+            Login 👋
+          </NavLink>
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
       </div>
     </div>
   );
