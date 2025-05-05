@@ -1,3 +1,72 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@plugin "daisyui" {
+  themes: dark --default, forest;
+}
+@theme {
+  --color-midnight: #121063;
+  --color-tahiti: #3ab7bf;
+  --color-bermuda: #78dcca;
+  /* swatches theme hex */
+  --color-my-hover: #a9d9d0;
+  --color-my-hover-l: #f2e7dc;
+  --color-my-active: #038c7f;
+  --color-my-active-d: #027373;
+  --color-main-d: #0d0d0d;
+  --color-myGray: #2d3e40;
+  --color-myPetrol: #387373;
+  --color-myLightBlue: #93bfb7;
+  /* swatches theme hex */
+  --color-myLightGray: #97a6a0;
+  --color-my-hover-l2: #e4f2e7;
+}
+
+/* Color Theme Swatches in Hex */
+.Abstract-marble-texture-background.-Colorful-backdrop-1-hex {
+  color: #2d3e40;
+}
+.Abstract-marble-texture-background.-Colorful-backdrop-2-hex {
+  color: #387373;
+}
+.Abstract-marble-texture-background.-Colorful-backdrop-3-hex {
+  color: #93bfb7;
+}
+.Abstract-marble-texture-background.-Colorful-backdrop-4-hex {
+  color: #97a6a0;
+}
+.Abstract-marble-texture-background.-Colorful-backdrop-5-hex {
+  color: #e4f2e7;
+}
+
+/* Color Theme Swatches in RGBA */
+.Abstract-marble-texture-background.-Colorful-backdrop-1-rgba {
+  color: rgba(45, 61, 63, 1);
+}
+.Abstract-marble-texture-background.-Colorful-backdrop-2-rgba {
+  color: rgba(56, 114, 114, 1);
+}
+.Abstract-marble-texture-background.-Colorful-backdrop-3-rgba {
+  color: rgba(147, 191, 183, 1);
+}
+.Abstract-marble-texture-background.-Colorful-backdrop-4-rgba {
+  color: rgba(150, 165, 160, 1);
+}
+.Abstract-marble-texture-background.-Colorful-backdrop-5-rgba {
+  color: rgba(227, 242, 231, 1);
+}
+
+/* Color Theme Swatches in HSLA */
+.Abstract-marble-texture-background.-Colorful-backdrop-1-hsla {
+  color: hsla(185, 16, 21, 1);
+}
+.Abstract-marble-texture-background.-Colorful-backdrop-2-hsla {
+  color: hsla(180, 34, 33, 1);
+}
+.Abstract-marble-texture-background.-Colorful-backdrop-3-hsla {
+  color: hsla(168, 25, 66, 1);
+}
+.Abstract-marble-texture-background.-Colorful-backdrop-4-hsla {
+  color: hsla(157, 7, 62, 1);
+}
+.Abstract-marble-texture-background.-Colorful-backdrop-5-hsla {
+  color: hsla(134, 36, 92, 1);
+}
