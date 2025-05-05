@@ -1,8 +1,18 @@
-import { useState } from 'react';
+import React from 'react';
 import './App.css';
+import NavBar from './Components/NavBar';
 
 function App() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  return (
+    <div className="px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
+      {/* NavBar */}
+      <NavBar />
+      {/* BreadCrumbs*/}
+      {/* Introduction */}
+      {/* Posts*/}
+      Hello world!
+    </div>
+  );
 }
 
 export default App;
